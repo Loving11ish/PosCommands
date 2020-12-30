@@ -1,0 +1,10 @@
+name: PosCommands
+version: ${project.version}
+main: me.loving11ish.poscommands.PosCommands
+api-version: 1.13
+authors: [Loving11ish]
+description: A simple plugin that allows any player to trigger commands when they move over certain blocks
+commands:
+  pcreload:
+    description: Reloads the plugins main config file.
+    usage: /<command>
