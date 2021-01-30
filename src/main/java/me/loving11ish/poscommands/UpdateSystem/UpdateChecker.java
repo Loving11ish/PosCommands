@@ -1,7 +1,7 @@
 package me.loving11ish.poscommands.UpdateSystem;
 
+import me.loving11ish.poscommands.Utils.ColorUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Consumer;
 
@@ -27,9 +27,8 @@ public class UpdateChecker {
                     consumer.accept(scanner.next());
                 }
             } catch (IOException exception) {
-                System.out.println(ChatColor.RED + "*-------------------------------------------*");
-                System.out.println(ChatColor.RED + "[PosCommands] - Unable to check for updates: " + exception.getMessage());
-                System.out.println(ChatColor.RED + "*-------------------------------------------*");
+                System.out.println(ColorUtils.translateColorCodes("&b[PosCommand] &4- Unable to check for updates! - &c" + exception.getMessage()));
+
             }
         });
     }

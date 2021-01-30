@@ -4,6 +4,7 @@ import me.loving11ish.poscommands.Commands.ReloadConfig;
 import me.loving11ish.poscommands.Events.PlayerWalkEvent;
 import me.loving11ish.poscommands.UpdateSystem.JoinEvent;
 import me.loving11ish.poscommands.UpdateSystem.UpdateChecker;
+import me.loving11ish.poscommands.Utils.ColorUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -38,13 +39,13 @@ public final class PosCommands extends JavaPlugin {
         // Check For Available Updates
         new UpdateChecker(this, 85571).getVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
-                System.out.println(ChatColor.GREEN + "*-------------------------------------------*");
-                System.out.println(ChatColor.GREEN + "[PosCommands] - Plugin is up to date");
-                System.out.println(ChatColor.GREEN + "*-------------------------------------------*");
+                System.out.println(ColorUtils.translateColorCodes(getConfig().getString("Update-1")));
+                System.out.println(ColorUtils.translateColorCodes(getConfig().getString("Update-2")));
+                System.out.println(ColorUtils.translateColorCodes(getConfig().getString("Update-3")));
             }else {
-                System.out.println(ChatColor.RED + "*-------------------------------------------*");
-                System.out.println(ChatColor.RED + "[PosCommands] - A new version is available!");
-                System.out.println(ChatColor.RED + "*-------------------------------------------*");
+                System.out.println(ColorUtils.translateColorCodes(getConfig().getString("No-update-1")));
+                System.out.println(ColorUtils.translateColorCodes(getConfig().getString("No-update-2")));
+                System.out.println(ColorUtils.translateColorCodes(getConfig().getString("No-update-3")));
             }
         });
     }
