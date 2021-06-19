@@ -19,7 +19,7 @@ public class ReloadConfig implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player){
             Player player = (Player) sender;
-            if (player.hasPermission("posCommands.reload")){
+            if (player.hasPermission("posCommands.reload")||player.hasPermission("posCommands.*")||player.isOp()){
                 plugin.reloadConfig();
                 player.sendMessage(ColorUtils.translateColorCodes(plugin.getConfig().getString("Reload-1")));
                 player.sendMessage(ColorUtils.translateColorCodes(plugin.getConfig().getString("Reload-2")));

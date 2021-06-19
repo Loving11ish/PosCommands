@@ -27,7 +27,7 @@ public class UpdateChecker {
                     consumer.accept(scanner.next());
                 }
             } catch (IOException exception) {
-                System.out.println(ColorUtils.translateColorCodes("&b[PosCommand] &4- Unable to check for updates! - &c" + exception.getMessage()));
+                System.out.println(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-check-failure") + exception.getMessage()));
 
             }
         });

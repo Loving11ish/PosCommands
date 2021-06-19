@@ -162,13 +162,13 @@ Reload-command-no-permission: "&4You do not have the permission &eposCommands.re
 
 #Plugin-update-available:
 Update-1: "&4*-------------------------------------------*"
-Update-2: "&b[PosCommands] &c- A new version is available!"
+Update-2: "&bPosCommands &c- A new version is available!"
 Update-3: "&4*-------------------------------------------*"
 
 #Plugin-no-new-update:
 No-update-1: "&a*-------------------------------------------*"
-No-update-2: "&b[PosCommands] &a- Plugin is up to date!"
+No-update-2: "&bPosCommands &a- Plugin is up to date!"
 No-update-3: "&a*-------------------------------------------*"
-Update-check-failure: "&b[PosCommand] &4- Unable to check for updates! - &c"
+Update-check-failure: "&bPosCommand &4- Unable to check for updates! - &c"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#

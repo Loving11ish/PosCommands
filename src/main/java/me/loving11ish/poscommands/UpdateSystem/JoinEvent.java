@@ -18,7 +18,7 @@ public class JoinEvent implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-        if (player.hasPermission("posCommands.update")) {
+        if (player.hasPermission("posCommands.update")||player.hasPermission("posCommands.*")||player.isOp()) {
             new UpdateChecker(plugin, 85571).getVersion(version -> {
                 try {
                     if (!(plugin.getDescription().getVersion().equalsIgnoreCase(version))) {
