@@ -1,5 +1,6 @@
 package me.loving11ish.poscommands.UpdateSystem;
 
+import me.loving11ish.poscommands.PosCommands;
 import me.loving11ish.poscommands.Utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -9,11 +10,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class UpdateChecker {
 
     private Plugin plugin;
     private int resourceId;
+    Logger logger = PosCommands.getPlugin().getLogger();
 
     public UpdateChecker(Plugin plugin, int resourceId) {
         this.plugin = plugin;
@@ -27,7 +30,7 @@ public class UpdateChecker {
                     consumer.accept(scanner.next());
                 }
             } catch (IOException exception) {
-                System.out.println(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-check-failure") + exception.getMessage()));
+                logger.warning(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-check-failure") + exception.getMessage()));
 
             }
         });
