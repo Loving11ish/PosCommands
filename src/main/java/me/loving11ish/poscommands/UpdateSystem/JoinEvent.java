@@ -9,25 +9,19 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class JoinEvent implements Listener {
 
-    PosCommands plugin;
-
-    public JoinEvent(PosCommands plugin) {
-        this.plugin = plugin;
-    }
-
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         if (player.hasPermission("posCommands.update")||player.hasPermission("posCommands.*")||player.isOp()) {
-            new UpdateChecker(plugin, 85571).getVersion(version -> {
+            new UpdateChecker(PosCommands.getPlugin(), 85571).getVersion(version -> {
                 try {
-                    if (!(plugin.getDescription().getVersion().equalsIgnoreCase(version))) {
-                        player.sendMessage(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-1")));
-                        player.sendMessage(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-2")));
-                        player.sendMessage(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-3")));
+                    if (!(PosCommands.getPlugin().getDescription().getVersion().equalsIgnoreCase(version))) {
+                        player.sendMessage(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Update-1")));
+                        player.sendMessage(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Update-2")));
+                        player.sendMessage(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Update-3")));
                     }
                 }catch (NullPointerException e){
-                    player.sendMessage(ColorUtils.translateColorCodes(plugin.getConfig().getString("Update-check-failure")));
+                    player.sendMessage(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Update-check-failure")));
                 }
             });
         }
