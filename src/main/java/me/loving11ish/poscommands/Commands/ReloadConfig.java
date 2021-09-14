@@ -7,8 +7,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.util.logging.Logger;
+
 public class ReloadConfig implements CommandExecutor {
 
+    Logger logger = PosCommands.getPlugin().getLogger();
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -24,9 +27,9 @@ public class ReloadConfig implements CommandExecutor {
             }
         }else if (!(sender instanceof Player)){
             PosCommands.getPlugin().reloadConfig();
-            System.out.println(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Reload-1")));
-            System.out.println(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Reload-2")));
-            System.out.println(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Reload-3")));
+            logger.info(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Reload-1")));
+            logger.info(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Reload-2")));
+            logger.info(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Reload-3")));
         }
         return true;
     }

@@ -16,7 +16,9 @@ public class PlayerWalkEvent implements Listener {
     public void onPlayerWalk(org.bukkit.event.player.PlayerMoveEvent event) {
         Player player = event.getPlayer();
         Location blockunder = player.getLocation();
+        String target = player.getName();
         blockunder.setY(blockunder.getY() - 1);
+//----------------------------------------------------------------------------------------------------------------------
         if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-1")))
                 && blockunder.getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Bottom-Trigger-Block-1")))) {
             if (PosCommands.getPlugin().getConfig().getBoolean("1-TP-Enabled")){
@@ -27,30 +29,64 @@ public class PlayerWalkEvent implements Listener {
                 player.teleport(location);
             }if (PosCommands.getPlugin().getConfig().getBoolean("1-Command-1-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("1-run-as-console-1")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-1").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-1").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-1"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-1").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-1").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-1"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("1-Command-2-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("1-run-as-console-2")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-2").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-2").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-2"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-2").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-2").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-2"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("1-Command-3-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("1-run-as-console-3")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-3").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-3").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-3"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-3").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-3").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-3"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("1-Command-4-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("1-run-as-console-4")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-4").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-4").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("1-Command-4"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("1-Command-4").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-4").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("1-Command-4"));
+                    }
                 }
             }
-        }if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-2")))
+        }
+//----------------------------------------------------------------------------------------------------------------------
+        if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-2")))
                 && blockunder.getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Bottom-Trigger-Block-2")))) {
             if (PosCommands.getPlugin().getConfig().getBoolean("2-TP-Enabled")){
                 int x = PosCommands.getPlugin().getConfig().getInt("2-TP-Once-Triggered-X");
@@ -60,30 +96,64 @@ public class PlayerWalkEvent implements Listener {
                 player.teleport(location);
             }if (PosCommands.getPlugin().getConfig().getBoolean("2-Command-1-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("2-run-as-console-1")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-1").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-1").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-1"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-1").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-1").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-1"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("2-Command-2-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("2-run-as-console-2")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-2").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-2").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-2"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-2").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-2").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-2"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("2-Command-3-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("2-run-as-console-3")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-3").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-3").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-3"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-3").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-3").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-3"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("2-Command-4-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("2-run-as-console-4")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-4").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-4").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("2-Command-4"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("2-Command-4").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-4").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("2-Command-4"));
+                    }
                 }
             }
-        }if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-3")))
+        }
+//----------------------------------------------------------------------------------------------------------------------
+        if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-3")))
                 && blockunder.getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Bottom-Trigger-Block-3")))) {
             if (PosCommands.getPlugin().getConfig().getBoolean("3-TP-Enabled")){
                 int x = PosCommands.getPlugin().getConfig().getInt("3-TP-Once-Triggered-X");
@@ -93,30 +163,64 @@ public class PlayerWalkEvent implements Listener {
                 player.teleport(location);
             }if (PosCommands.getPlugin().getConfig().getBoolean("3-Command-1-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("3-run-as-console-1")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-1").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-1").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-1"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-1").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-1").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-1"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("3-Command-2-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("3-run-as-console-2")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-2").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-2").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-2"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-2").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-2").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-2"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("3-Command-3-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("3-run-as-console-3")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-3").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-3").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-3"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-3").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-3").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-3"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("3-Command-4-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("3-run-as-console-4")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-4").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-4").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("3-Command-4"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("3-Command-4").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-4").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("3-Command-4"));
+                    }
                 }
             }
-        }if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-4")))
+        }
+//----------------------------------------------------------------------------------------------------------------------
+        if (player.getLocation().getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Top-Trigger-Block-4")))
                 && blockunder.getBlock().getType().equals(Material.getMaterial(PosCommands.getPlugin().getConfig().getString("Bottom-Trigger-Block-4")))) {
             if (PosCommands.getPlugin().getConfig().getBoolean("4-TP-Enabled")){
                 int x = PosCommands.getPlugin().getConfig().getInt("4-TP-Once-Triggered-X");
@@ -126,27 +230,59 @@ public class PlayerWalkEvent implements Listener {
                 player.teleport(location);
             }if (PosCommands.getPlugin().getConfig().getBoolean("4-Command-1-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("4-run-as-console-1")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-1").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-1").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-1"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-1"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-1").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-1").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-1"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("4-Command-2-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("4-run-as-console-2")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-2").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-2").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-2"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-2"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-2").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-2").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-2"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("4-Command-3-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("4-run-as-console-3")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-3").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-3").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-3"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-3"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-3").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-3").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-3"));
+                    }
                 }
             }if (PosCommands.getPlugin().getConfig().getBoolean("4-Command-4-enabled")){
                 if (PosCommands.getPlugin().getConfig().getBoolean("4-run-as-console-4")){
-                    getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-4").contains("%player%")){
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-4").replace("%player%", target));
+                    }else {
+                        getServer().dispatchCommand(Bukkit.getConsoleSender(), PosCommands.getPlugin().getConfig().getString("4-Command-4"));
+                    }
                 }else {
-                    player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-4"));
+                    if (PosCommands.getPlugin().getConfig().getString("4-Command-4").contains("%player%")){
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-4").replace("%player%", target));
+                    }else {
+                        player.performCommand(PosCommands.getPlugin().getConfig().getString("4-Command-4"));
+                    }
                 }
             }
         }

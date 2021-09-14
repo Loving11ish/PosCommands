@@ -8,3 +8,4 @@ commands:
   pcreload:
     description: Reloads the plugins main config file.
     usage: /<command>
+    permission: posCommands.reload

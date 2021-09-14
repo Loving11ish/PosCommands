@@ -7,6 +7,15 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#                The commands entered below do not require the '/' before them.                     #
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+#If the commands you want to enter require the name of the player triggering them, replace their name
+#with the '%player%' placeholder within your command string.  This will work on either player run or
+#if you have set the command to run from console.
+#An example would be 'effect give %player% minecraft:levitation 10 1'
+
 #This is for the first block combination
 #This sets the combination of blocks that the player walks over to trigger the commands.
 Top-Trigger-Block-1: OAK_PRESSURE_PLATE
@@ -21,7 +30,8 @@ Bottom-Trigger-Block-1: BEDROCK
 
 #These commands are triggered when a player walks over the blocks set above (the '/' is not required).
 #Enter the commands below, up to 4 commands can be triggered simultaneously.
-#All commands are executed by the player not the console, therefore the players must have the relevant permissions assigned.
+#All commands are executed by the player not the console. (Unless 'run-as-console=true')
+#Therefore the players must have the relevant permissions assigned.
 1-Command-1-enabled: true
 1-run-as-console-1: false
 1-Command-1: 'kit starter'
@@ -54,7 +64,8 @@ Bottom-Trigger-Block-2: REDSTONE_BLOCK
 
 #These commands are triggered when a player walks over the blocks set above (the '/' is not required).
 #Enter the commands below, up to 4 commands can be triggered simultaneously.
-#All commands are executed by the player not the console, therefore the players must have the relevant permissions assigned.
+#All commands are executed by the player not the console. (Unless 'run-as-console=true')
+#Therefore the players must have the relevant permissions assigned.
 2-Command-1-enabled: false
 2-run-as-console-1: false
 2-Command-1: 'rules'
@@ -87,7 +98,8 @@ Bottom-Trigger-Block-3: OBSIDIAN
 
 #These commands are triggered when a player walks over the blocks set above (the '/' is not required).
 #Enter the commands below, up to 4 commands can be triggered simultaneously.
-#All commands are executed by the player not the console, therefore the players must have the relevant permissions assigned.
+#All commands are executed by the player not the console. (Unless 'run-as-console=true')
+#Therefore the players must have the relevant permissions assigned.
 3-Command-1-enabled: false
 3-run-as-console-1: false
 3-Command-1: ''
@@ -120,7 +132,8 @@ Bottom-Trigger-Block-4: SPRUCE_LOG
 
 #These commands are triggered when a player walks over the blocks set above (the '/' is not required).
 #Enter the commands below, up to 4 commands can be triggered simultaneously.
-#All commands are executed by the player not the console, therefore the players must have the relevant permissions assigned.
+#All commands are executed by the player not the console. (Unless 'run-as-console=true')
+#Therefore the players must have the relevant permissions assigned.
 4-Command-1-enabled: false
 4-run-as-console-1: false
 4-Command-1: ''
