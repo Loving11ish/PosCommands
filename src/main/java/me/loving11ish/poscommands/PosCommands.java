@@ -66,13 +66,13 @@ public final class PosCommands extends JavaPlugin {
         // Check For Available Updates
         new UpdateChecker(this, 85571).getVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
-                logger.warning(ColorUtils.translateColorCodes(getConfig().getString("No-update-1")));
-                logger.warning(ColorUtils.translateColorCodes(getConfig().getString("No-update-2")));
-                logger.warning(ColorUtils.translateColorCodes(getConfig().getString("No-update-3")));
+                logger.info(ColorUtils.translateColorCodes(getConfig().getString("No-update-1")));
+                logger.info(ColorUtils.translateColorCodes(getConfig().getString("No-update-2")));
+                logger.info(ColorUtils.translateColorCodes(getConfig().getString("No-update-3")));
             }else {
-                logger.info(ColorUtils.translateColorCodes(getConfig().getString("Update-1")));
-                logger.info(ColorUtils.translateColorCodes(getConfig().getString("Update-2")));
-                logger.info(ColorUtils.translateColorCodes(getConfig().getString("Update-3")));
+                logger.warning(ColorUtils.translateColorCodes(getConfig().getString("Update-1")));
+                logger.warning(ColorUtils.translateColorCodes(getConfig().getString("Update-2")));
+                logger.warning(ColorUtils.translateColorCodes(getConfig().getString("Update-3")));
             }
         });
     }
