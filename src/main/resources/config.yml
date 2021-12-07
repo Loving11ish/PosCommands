@@ -16,6 +16,13 @@
 #if you have set the command to run from console.
 #An example would be 'effect give %player% minecraft:levitation 10 1'
 
+#Do you want to use a cooldown once a player has triggered a command set?
+Enable-cooldown: true
+#How long do you want the cooldown to be? (In Seconds) (Cooldowns are NOT saved through a restart!)
+Cooldown-time: 5
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
 #This is for the first block combination
 #This sets the combination of blocks that the player walks over to trigger the commands.
 Top-Trigger-Block-1: OAK_PRESSURE_PLATE
