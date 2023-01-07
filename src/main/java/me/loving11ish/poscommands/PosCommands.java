@@ -39,7 +39,8 @@ public final class PosCommands extends JavaPlugin {
             logger.warning(ChatColor.RED + "PosCommands - 1.19.x");
             logger.warning(ChatColor.RED + "PosCommands - Is now disabling!");
             logger.warning(ChatColor.RED + "-------------------------------------------");
-            Bukkit.getPluginManager().disablePlugin(plugin);
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
         }else {
             logger.info(ChatColor.GREEN + "-------------------------------------------");
             logger.info(ChatColor.GREEN + "PosCommands - A supported Minecraft version has been detected");
