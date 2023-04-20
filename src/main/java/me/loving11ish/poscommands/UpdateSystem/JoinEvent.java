@@ -13,7 +13,7 @@ public class JoinEvent implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         if (player.hasPermission("posCommands.update")||player.hasPermission("posCommands.*")||player.isOp()) {
-            new UpdateChecker(PosCommands.getPlugin(), 85571).getVersion(version -> {
+            new UpdateChecker(85571).getVersion(version -> {
                 try {
                     if (!(PosCommands.getPlugin().getDescription().getVersion().equalsIgnoreCase(version))) {
                         player.sendMessage(ColorUtils.translateColorCodes(PosCommands.getPlugin().getConfig().getString("Update-1")));

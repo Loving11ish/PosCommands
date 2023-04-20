@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PosCommands" target="11" />
+      <module name="PosCommands" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

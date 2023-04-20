@@ -22,6 +22,7 @@ public final class PosCommands extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        plugin = this;
 
         //Server version compatibility check
         if (!(Bukkit.getServer().getVersion().contains("1.13")||Bukkit.getServer().getVersion().contains("1.14")
@@ -49,7 +50,6 @@ public final class PosCommands extends JavaPlugin {
         }
 
         // Create & Save Config File
-        plugin = this;
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
@@ -68,7 +68,7 @@ public final class PosCommands extends JavaPlugin {
         logger.info("-------------------------------------------");
 
         // Check For Available Updates
-        new UpdateChecker(this, 85571).getVersion(version -> {
+        new UpdateChecker(85571).getVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 logger.info(ColorUtils.translateColorCodes(getConfig().getString("No-update-1")));
                 logger.info(ColorUtils.translateColorCodes(getConfig().getString("No-update-2")));

@@ -45,7 +45,7 @@ Bottom-Trigger-Block-1: BEDROCK
 
 1-Command-2-enabled: false
 1-run-as-console-2: false
-1-Command-2: 'enjin points'
+1-Command-2: 'balance'
 
 1-Command-3-enabled: false
 1-run-as-console-3: false

@@ -2,6 +2,7 @@ name: PosCommands
 version: ${project.version}
 main: me.loving11ish.poscommands.PosCommands
 api-version: 1.13
+folia-supported: true
 authors: [Loving11ish]
 description: A simple plugin that allows any player to trigger commands when they move over certain blocks
 commands:
