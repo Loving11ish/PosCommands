@@ -2,10 +2,11 @@
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #                                       ----[PosCommands]----                                       #
 #                                     ----[By Loving11ish]----                                      #
-#                                   ----[mc.crapticraft.com]----                                    #
 #                                   ----[Plugin Config File]----                                    #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+#PosCommands plugin config for version: ${project.version}
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #                The commands entered below do not require the '/' before them.                     #
@@ -163,7 +164,6 @@ Bottom-Trigger-Block-4: SPRUCE_LOG
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #                                       ----[PosCommands]----                                       #
 #                                     ----[By Loving11ish]----                                      #
-#                                   ----[mc.crapticraft.com]----                                    #
 #                                 ----[Plugin Messages Config]----                                  #
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -173,22 +173,21 @@ Bottom-Trigger-Block-4: SPRUCE_LOG
 
 #Plugin responses
 
-#Config-reload-success:
-Reload-1: "&e[---------------------------------------------------]"
-Reload-2: "&aConfiguration file has been successfully reloaded!"
-Reload-3: "&e[---------------------------------------------------]"
+#Config-reload:
+Reload-beginning: "&6PosCommands: &aBeginning plugin reload..."
+Reload-complete: "&6PosCommands: &aPlugin reload completed!"
 
 Reload-command-no-permission: "&4You do not have the permission &eposCommands.reload &4needed to run that command!"
 
 #Plugin-update-available:
 Update-1: "&4*-------------------------------------------*"
-Update-2: "&bPosCommands &c- A new version is available!"
+Update-2: "&6PosCommands: &cA new version is available!"
 Update-3: "&4*-------------------------------------------*"
 
 #Plugin-no-new-update:
 No-update-1: "&a*-------------------------------------------*"
-No-update-2: "&bPosCommands &a- Plugin is up to date!"
+No-update-2: "&6PosCommands: &aPlugin is up to date!"
 No-update-3: "&a*-------------------------------------------*"
-Update-check-failure: "&bPosCommand &4- Unable to check for updates! - &c"
+Update-check-failure: "&6PosCommand: &4Unable to check for updates! - &c"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#

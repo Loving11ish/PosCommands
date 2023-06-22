@@ -6,7 +6,7 @@
 
     <groupId>me.loving11ish</groupId>
     <artifactId>PosCommands</artifactId>
-    <version>3.8.3</version>
+    <version>3.8.4</version>
     <packaging>jar</packaging>
 
     <name>PosCommands</name>
@@ -38,8 +38,12 @@
                     <dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
                     <relocations>
                         <relocation>
+                            <pattern>io.papermc.lib</pattern>
+                            <shadedPattern>me.loving11ish.poscommands.paperlib</shadedPattern> <!-- Replace this -->
+                        </relocation>
+                        <relocation>
                             <pattern>com.tcoded.folialib</pattern>
-                            <shadedPattern>me.loving11ish.poscommands.PosCommands.folialib</shadedPattern>
+                            <shadedPattern>me.loving11ish.poscommands.folialib</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -74,20 +78,41 @@
             <id>devmart-other</id>
             <url>https://nexuslite.gcnt.net/repos/other/</url>
         </repository>
+        <repository>
+            <id>papermc</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
+        </repository>
+        <!-- PlugMan -->
+        <repository>
+            <id>PlugMan</id>
+            <url>https://raw.githubusercontent.com/TheBlackEntity/PlugMan/repository/</url>
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.19.4-R0.1-SNAPSHOT</version>
+            <version>1.20.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.tcoded</groupId>
             <artifactId>FoliaLib</artifactId>
-            <version>0.2.0</version>
+            <version>0.2.4</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.papermc</groupId>
+            <artifactId>paperlib</artifactId>
+            <version>1.0.8</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.rylinaux</groupId>
+            <artifactId>PlugMan</artifactId>
+            <version>2.2.9</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
